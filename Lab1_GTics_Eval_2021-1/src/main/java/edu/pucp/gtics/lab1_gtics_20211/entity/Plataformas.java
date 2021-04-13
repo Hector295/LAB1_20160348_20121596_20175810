@@ -13,5 +13,27 @@ public class Plataformas {
     @Column(name = "descripcion")
     private String descripcionPlataforma;
 
+    public int getIdplataforma() {
+        return idplataforma;
+    }
 
+    public void setIdplataforma(int idplataforma) {
+        this.idplataforma = idplataforma;
+    }
+
+    public String getNombrePlataforma() {
+        return nombrePlataforma;
+    }
+
+    public void setNombrePlataforma(String nombrePlataforma) {
+        this.nombrePlataforma = nombrePlataforma;
+    }
+
+    public String getDescripcionPlataforma() {
+        return descripcionPlataforma;
+    }
+
+    public void setDescripcionPlataforma(String descripcionPlataforma) {
+        this.descripcionPlataforma = descripcionPlataforma;
+    }
 }
