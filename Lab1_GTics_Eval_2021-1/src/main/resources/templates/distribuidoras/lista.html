@@ -69,8 +69,8 @@
                         <td th:text="${distribuidora.getNombreDistribuidora()}"></td>
                         <td th:text="${distribuidora.getFundacion()}"></td>
                         <td th:text="${distribuidora.getSede()}"></td>
-                        <td><a class="btn btn-primary" href="/distribuidoras/editar?id=4">Editar</a></td>
-                        <td><a class="btn btn-danger" href="/distribuidoras/borrar?id=4">Borrar</a></td>
+                        <td><a class="btn btn-primary" th:href="@{'/distribuidoras/editar?id='+${distribuidora.getIddistribuidora()}}">Editar</a></td>
+                        <td><a class="btn btn-danger" th:href="@{'/distribuidoras/borrar?id='+${distribuidora.getIddistribuidora()}}">Borrar</a></td>
                     </tr>
                     </tbody>
                 </table>
