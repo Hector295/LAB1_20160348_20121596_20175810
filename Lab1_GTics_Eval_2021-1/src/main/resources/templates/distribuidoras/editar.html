@@ -48,12 +48,14 @@
             <h2>Editar Distribuidora</h2>
         </div>
         <div class="container-fluid">
-            <form method="POST" th:action="@{/distribuidoras/guardar}" th:object="${distribuidora}">
-                <!-- Completar -->
-                <!-- Completar -->
-                <!-- Completar -->
-                <!-- Completar -->
-
+            <form method="POST" th:action="@{/distribuidoras/guardar}" th:object="${distribuidoraAEditar}">
+                <input th:field="*{iddistribuidora}" type="hidden">
+                <label class="small mb-1">Nombre</label>
+                <input th:fiel="*{nombreDistribuidora}">
+                <label class="small mb-1">Fundación</label>
+                <input th:fiel="*{fundacion}">
+                <label class="small mb-1">Sede</label>
+                <input th:fiel="*{sede}">
                 <a class="btn btn-danger">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
