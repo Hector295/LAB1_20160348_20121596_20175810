@@ -1,12 +1,13 @@
 package edu.pucp.gtics.lab1_gtics_20211.controller;
 
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class DistribuidorasController {
 
 
 
     public String listaDistribuidoras (){
-
     }
 
     public String editarDistribuidoras(){
