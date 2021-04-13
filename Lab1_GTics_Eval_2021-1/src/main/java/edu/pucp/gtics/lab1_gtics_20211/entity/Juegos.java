@@ -1,8 +1,98 @@
 package edu.pucp.gtics.lab1_gtics_20211.entity;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "juegos")
 public class Juegos {
 
-    /** Completar*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="idJuego")
+    public int idJuego;
 
+    @Column(name="nombre")
+    public String nombreJuego;
+
+    @Column(name="descripcion")
+    public String descripcionJuego;
+
+    @Column(name="precio", nullable = false)
+    public double precio;
+
+    @Column(name="idgenero")
+    public int idgenero;
+
+    @Column(name="idplataforma")
+    public int idplataforma;
+
+    @Column(name="ideditora")
+    public int ideditora;
+
+    @Column(name="iddistribuidora")
+    public int iddistribuidora;
+
+    public int getIdJuego() {
+        return idJuego;
+    }
+
+    public void setIdJuego(int idJuego) {
+        this.idJuego = idJuego;
+    }
+
+    public String getNombreJuego() {
+        return nombreJuego;
+    }
+
+    public void setNombreJuego(String nombreJuego) {
+        this.nombreJuego = nombreJuego;
+    }
+
+    public String getDescripcionJuego() {
+        return descripcionJuego;
+    }
+
+    public void setDescripcionJuego(String descripcionJuego) {
+        this.descripcionJuego = descripcionJuego;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getIdgenero() {
+        return idgenero;
+    }
+
+    public void setIdgenero(int idgenero) {
+        this.idgenero = idgenero;
+    }
+
+    public int getIdplataforma() {
+        return idplataforma;
+    }
+
+    public void setIdplataforma(int idplataforma) {
+        this.idplataforma = idplataforma;
+    }
+
+    public int getIdeditora() {
+        return ideditora;
+    }
+
+    public void setIdeditora(int ideditora) {
+        this.ideditora = ideditora;
+    }
+
+    public int getIddistribuidora() {
+        return iddistribuidora;
+    }
+
+    public void setIddistribuidora(int iddistribuidora) {
+        this.iddistribuidora = iddistribuidora;
+    }
 }
