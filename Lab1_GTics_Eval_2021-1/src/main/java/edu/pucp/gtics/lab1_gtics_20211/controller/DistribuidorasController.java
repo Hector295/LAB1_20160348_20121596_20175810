@@ -56,6 +56,6 @@ public class DistribuidorasController {
         if (opt.isPresent()) {
             distribuidorasRepository.deleteById(id);
         }
-        return "redirect:/distribuidoras"; //Redirecciona al controlador
+        return "redirect:/distribuidoras";
     }
 }
