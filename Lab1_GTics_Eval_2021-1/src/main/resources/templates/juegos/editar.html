@@ -55,11 +55,16 @@
                     <div><label class="small mb-1">Descripción</label>
                         <input th:field="*{descripcionJuego}"></div>
                     <div><label class="small mb-1">Plataforma</label>
-                        <input th:field="*{idplataforma}"></div>
+                        <select th:field="*{idplataforma}">
+                            <option th:each="plataforma:${listaPlataformas}"
+                                    th:value="${plataforma.getIdplataforma()}"
+                            th:text="${plataforma.getNombrePlataforma()}">
+                            </option>
+                        </select></div>
                     <div><label class="small mb-1">Precio</label>
                         <input th:field="*{precio}"></div>
 
-                    <a class="btn btn-danger" th:href="@{/juegos/listaJuegos}">Cancelar</a>
+                    <a class="btn btn-danger" th:href="@{/juegos/lista}">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
         </div>
@@ -69,7 +74,7 @@
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Colocar # Grupo - PUCP @ 2021</div>
+                    <div class="text-muted">Grupo 4 20160348_20121596_20175810 PUCP @ 2021</div>
                 </div>
             </div>
         </footer>

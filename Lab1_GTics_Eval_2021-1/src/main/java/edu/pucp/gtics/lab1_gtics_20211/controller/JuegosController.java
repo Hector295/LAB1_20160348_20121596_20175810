@@ -23,7 +23,7 @@ public class JuegosController {
     @Autowired
     PlataformasRepository plataformasRepository;
 
-    @GetMapping("/listaJuegos")
+    @GetMapping("/lista")
     public String listaJuegos(Model model) {
         model.addAttribute("listaJuegos", juegosRepository.findAll());
         return "juegos/lista";
@@ -39,7 +39,7 @@ public class JuegosController {
             model.addAttribute("listaPlataformas", plataformasRepository.findAll());
             return "juegos/editar";
         }else{
-            return "redirect:/juegos";
+            return "redirect:/juegos/lista";
         }
 
 
@@ -48,6 +48,6 @@ public class JuegosController {
     @PostMapping("/guardar")
     public String guardarJuegos(Juegos juegos) {
         juegosRepository.save(juegos);
-        return "redirect:/juegos";
+        return "redirect:/juegos/lista";
     }
 }

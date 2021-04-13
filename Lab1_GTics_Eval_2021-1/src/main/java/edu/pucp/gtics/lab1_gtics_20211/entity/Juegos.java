@@ -20,17 +20,10 @@ public class Juegos {
     @Column(name="precio", nullable = false)
     public double precio;
 
-    @Column(name="idgenero")
-    public int idgenero;
-
     @Column(name="idplataforma")
     public int idplataforma;
 
-    @Column(name="ideditora")
-    public int ideditora;
 
-    @Column(name="iddistribuidora")
-    public int iddistribuidora;
 
     public int getIdJuego() {
         return idJuego;
@@ -64,14 +57,6 @@ public class Juegos {
         this.precio = precio;
     }
 
-    public int getIdgenero() {
-        return idgenero;
-    }
-
-    public void setIdgenero(int idgenero) {
-        this.idgenero = idgenero;
-    }
-
     public int getIdplataforma() {
         return idplataforma;
     }
@@ -80,19 +65,5 @@ public class Juegos {
         this.idplataforma = idplataforma;
     }
 
-    public int getIdeditora() {
-        return ideditora;
-    }
 
-    public void setIdeditora(int ideditora) {
-        this.ideditora = ideditora;
-    }
-
-    public int getIddistribuidora() {
-        return iddistribuidora;
-    }
-
-    public void setIddistribuidora(int iddistribuidora) {
-        this.iddistribuidora = iddistribuidora;
-    }
 }
