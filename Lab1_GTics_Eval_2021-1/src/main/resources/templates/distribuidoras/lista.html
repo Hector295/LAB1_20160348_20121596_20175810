@@ -64,11 +64,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="distribuidora, numero:${distrinuidorasList}">
+                    <tr th:each="distribuidora, numero:${lista}">
                         <td th:text="${numero.index +1}"></td>
-                        <td th:text="${distribuidora}"></td>
-                        <td th:text="${distribuidora}"></td>
-                        <td th:text="${distribuidora}"></td>
+                        <td th:text="${distribuidora.getNombreDistribuidora()}"></td>
+                        <td th:text="${distribuidora.getFundacion()}"></td>
+                        <td th:text="${distribuidora.getSede()}"></td>
                         <td><a class="btn btn-primary" href="/distribuidoras/editar?id=4">Editar</a></td>
                         <td><a class="btn btn-danger" href="/distribuidoras/borrar?id=4">Borrar</a></td>
                     </tr>
