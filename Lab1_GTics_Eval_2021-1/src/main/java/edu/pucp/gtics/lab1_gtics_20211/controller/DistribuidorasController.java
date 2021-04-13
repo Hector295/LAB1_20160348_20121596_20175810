@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -43,13 +44,18 @@ public class DistribuidorasController {
         return "distribuidoras/nuevo";
     }
 
-    @GetMapping("/guardar")
-    public String guardarDistribuidora(){
-
+    @PostMapping("/guardar")
+    public String guardarDistribuidora(Distribuidoras distribuidoras){
+        distribuidorasRepository.save(distribuidoras);
+        return "redirect:/distribuidoras";
     }
 
-    public String borrarDistribuidora(){
-
+    @GetMapping("/borrar")
+    public String borrarDistribuidora(@RequestParam("id") int id){
+        Optional<Distribuidoras>  opt = distribuidorasRepository.findById(id);
+        if (opt.isPresent()) {
+            distribuidorasRepository.deleteById(id);
+        }
+        return "redirect:/distribuidoras"; //Redirecciona al controlador
     }
-
 }
