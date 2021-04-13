@@ -51,12 +51,12 @@
             <form method="POST" th:action="@{/distribuidoras/guardar}" th:object="${distribuidoraAEditar}">
                 <input th:field="*{iddistribuidora}" type="hidden">
                 <label class="small mb-1">Nombre</label>
-                <input th:fiel="*{nombreDistribuidora}">
+                <input th:field="*{nombreDistribuidora}">
                 <label class="small mb-1">Fundación</label>
-                <input th:fiel="*{fundacion}">
+                <input th:field="*{fundacion}">
                 <label class="small mb-1">Sede</label>
-                <input th:fiel="*{sede}">
-                <a class="btn btn-danger" th:href="@{/distribuidoras/listar}">Cancelar</a>
+                <input th:field="*{sede}">
+                <a class="btn btn-danger" th:href="@{/distribuidoras/lista}">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>

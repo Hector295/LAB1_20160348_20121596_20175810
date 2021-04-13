@@ -48,16 +48,16 @@
             <h2>Editar Juego</h2>
         </div>
         <div class="container-fluid">
-                <form method="POST" th:action="@{/juegos/guardar}" th:object="@{juegoAEditar}">
+                <form method="POST" th:action="@{/juegos/guardar}" th:object="${juegoAEditar}">
                     <input th:field="*{idJuego}" type="hidden">
                     <label class="small mb-1">Nombre</label>
-                    <input th:fiel="*{nombreJuego}">
+                    <input th:field="*{nombreJuego}">
                     <label class="small mb-1">Descripción</label>
-                    <input th:fiel="*{descripcionJuego}">
+                    <input th:field="*{descripcionJuego}">
                     <label class="small mb-1">Plataforma</label>
-                    <input th:fiel="*{idplataforma}">
+                    <input th:field="*{idplataforma}">
                     <label class="small mb-1">Precio</label>
-                    <input th:fiel="*{precio}">
+                    <input th:field="*{precio}">
 
                     <a  class="btn btn-danger">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Guardar</button>
