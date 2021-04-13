@@ -20,14 +20,17 @@ public class DistribuidorasController {
         return "distribuidoras/lista";
     }
 
+    @GetMapping("/editar")
     public String editarDistribuidoras(){
 
     }
 
+    @GetMapping("/nuevaDistribuidora")
     public String nuevaDistribuidora(){
-
+        return "distribuidoras/nuevo";
     }
 
+    @GetMapping("/guardar")
     public String guardarDistribuidora(){
 
     }
