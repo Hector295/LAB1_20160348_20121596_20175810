@@ -1,12 +1,15 @@
 package edu.pucp.gtics.lab1_gtics_20211.controller;
 
+import edu.pucp.gtics.lab1_gtics_20211.entity.Distribuidoras;
 import edu.pucp.gtics.lab1_gtics_20211.repository.DistribuidorasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/distribuidoras")
@@ -21,14 +24,26 @@ public class DistribuidorasController {
         return "distribuidoras/lista";
     }
 
-    public String editarDistribuidoras(){
+    @GetMapping("/editar")
+    public String editarDistribuidoras(@RequestParam("id") int id,
+                                       Model model){
+        Optional<Distribuidoras> shipperOpt = distribuidorasRepository.findById(id);
 
+        if (shipperOpt.isPresent()) {
+            Distribuidoras distribuidoraAEditar = shipperOpt.get();
+            model.addAttribute("distribuidoraAEditar", distribuidoraAEditar);
+            return "distribuidoras/editar";
+        } else {
+            return "redirect:/distribuidoras";
+        }
     }
 
+    @GetMapping("/nuevaDistribuidora")
     public String nuevaDistribuidora(){
-
+        return "distribuidoras/nuevo";
     }
-    @PostMapping("/guardar")
+
+    @GetMapping("/guardar")
     public String guardarDistribuidora(){
 
     }
