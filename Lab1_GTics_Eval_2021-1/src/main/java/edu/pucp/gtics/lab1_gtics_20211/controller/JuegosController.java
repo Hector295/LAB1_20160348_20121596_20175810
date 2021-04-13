@@ -31,6 +31,4 @@ public class JuegosController {
         juegosRepository.save(juegos);
         return "redirect:/juegos";
     }
-
-
 }
