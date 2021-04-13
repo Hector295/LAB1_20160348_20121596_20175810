@@ -1,10 +1,12 @@
 package edu.pucp.gtics.lab1_gtics_20211.controller;
 
+import edu.pucp.gtics.lab1_gtics_20211.entity.Juegos;
 import edu.pucp.gtics.lab1_gtics_20211.repository.JuegosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -25,9 +27,9 @@ public class JuegosController {
 
     }
 
-    public String guardarJuegos() {
-
+    @PostMapping("/guardar")
+    public String guardarJuegos(Juegos juegos) {
+        juegosRepository.save(juegos);
+        return "redirect:/juegos";
     }
-
-
 }
