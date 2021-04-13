@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -48,13 +48,15 @@
             <h2>Nueva Distribuidora</h2>
         </div>
         <div class="container-fluid">
-            <form method="POST">
-                <!-- Completar -->
-                <!-- Completar -->
-                <!-- Completar -->
-                <!-- Completar -->
+            <form method="POST" th:action="@{/distribuidoras/guardar}">
+                <label class="small mb-1">Nombre</label>
+                <input class="form-control" name="nombreDistribuidora" type="text">
+                <label class="small mb-1">Fundación</label>
+                <input class="form-control" name="fundacion" type="text">
+                <label class="small mb-1">Sede</label>
+                <input class="form-control" name="sede" type="text">
 
-                <a href="/distribuidoras/lista" class="btn btn-danger">Cancelar</a>
+                <a th:href="@{/distribuidoras/listar}" class="btn btn-danger">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>
