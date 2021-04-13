@@ -34,7 +34,7 @@
                         <a class="nav-link" th:href="@{/distribuidoras/lista}">Distribuidoras</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" th:href="@{/juegos/lista}"> Juegos</a>
+                        <a class="nav-link" th:href="@{/juegos/listaJuegos}"> Juegos</a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +62,8 @@
                     <label class="small mb-1">Sede</label>
                     <input th:field="*{sede}">
                 </div>
-                <a class="btn btn-danger" th:href="@{/distribuidoras}">Cancelar</a>
+                <a class="btn btn-danger" th:href="@{/distribuidoras/lista}">Cancelar</a>
+
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>

@@ -19,7 +19,7 @@ public class DistribuidorasController {
     @Autowired
     DistribuidorasRepository distribuidorasRepository;
 
-    @GetMapping(value={"/lista",""})
+    @GetMapping(value="/lista")
     public String listaDistribuidoras (Model model){
         model.addAttribute("lista", distribuidorasRepository.findAll());
         return "distribuidoras/lista";
